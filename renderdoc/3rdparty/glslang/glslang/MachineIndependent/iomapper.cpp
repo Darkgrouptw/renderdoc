@@ -1,4 +1,4 @@
-//
+﻿//
 // Copyright (C) 2016-2017 LunarG, Inc.
 //
 // All rights reserved.
@@ -658,8 +658,10 @@ struct TSymbolValidater
                     if (ent2->second.symbol->getType().getQualifier().isArrayedIo(nextStage)) {
                         TType subType(ent2->second.symbol->getType(), 0);
                         subType.appendMangledName(mangleName2);
-                    } else {
-                        ent2->second.symbol->getType().appendMangledName(mangleName2);
+                    }
+                    else
+                    {
+                      ent2->second.symbol->getType().appendMangledName(mangleName2);
                     }
                     if (mangleName1 == mangleName2)
                         return;

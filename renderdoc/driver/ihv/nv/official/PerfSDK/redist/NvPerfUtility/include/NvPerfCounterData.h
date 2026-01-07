@@ -1,4 +1,4 @@
-/*
+﻿/*
 * Copyright 2014-2025 NVIDIA Corporation.  All rights reserved.
 *
 * Licensed under the Apache License, Version 2.0 (the "License");
@@ -38,13 +38,13 @@ namespace nv { namespace perf {
         }
         CounterDataCombiner(const CounterDataCombiner& combiner) = delete;
         CounterDataCombiner& operator=(const CounterDataCombiner& combiner) = delete;
-        CounterDataCombiner(CounterDataCombiner&& combiner)
+        CounterDataCombiner(CounterDataCombiner &&combiner) noexcept
             : m_counterData(std::move(combiner.m_counterData))
             , m_pCounterDataCombiner(combiner.m_pCounterDataCombiner)
         {
             combiner.m_pCounterDataCombiner = nullptr;
         }
-        CounterDataCombiner& operator=(CounterDataCombiner&& combiner)
+        CounterDataCombiner &operator=(CounterDataCombiner &&combiner) noexcept
         {
             Reset();
             m_counterData = std::move(combiner.m_counterData);

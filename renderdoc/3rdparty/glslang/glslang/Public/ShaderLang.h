@@ -512,7 +512,7 @@ public:
     GLSLANG_EXPORT void setGlobalUniformSet(unsigned int set);
     GLSLANG_EXPORT void setGlobalUniformBinding(unsigned int binding);
     GLSLANG_EXPORT void setAtomicCounterBlockSet(unsigned int set);
-    GLSLANG_EXPORT void setAtomicCounterBlockBinding(unsigned int binding);
+    //GLSLANG_EXPORT void setAtomicCounterBlockBinding(unsigned int binding);
 
     GLSLANG_EXPORT void addSourceText(const char* text, size_t len);
     GLSLANG_EXPORT void setSourceFile(const char* file);
@@ -618,8 +618,8 @@ public:
             // Include resolver's context.
             void* userData;
         protected:
-            IncludeResult& operator=(const IncludeResult&);
-            IncludeResult();
+            //IncludeResult& operator=(const IncludeResult&);
+            //IncludeResult();
         };
 
         // For both include methods below:
@@ -736,7 +736,7 @@ protected:
     friend class TProgram;
 
 private:
-    TShader& operator=(TShader&);
+    //TShader& operator=(TShader&);
 };
 
 //
@@ -768,7 +768,7 @@ public:
     EShLanguageMask stages;
 
 protected:
-    TObjectReflection()
+    inline TObjectReflection()
         : offset(-1), glDefineType(-1), size(-1), index(-1), counterIndex(-1), numMembers(-1), arrayStride(0),
           topLevelArrayStride(0), stages(EShLanguageMask(0)), type(nullptr)
     {
@@ -1001,7 +1001,7 @@ protected:
 
 private:
     TProgram(TProgram&);
-    TProgram& operator=(TProgram&);
+    //TProgram& operator=(TProgram&) N;
 };
 
 } // end namespace glslang
